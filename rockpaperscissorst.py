@@ -13,19 +13,24 @@ def bot():
     else :
         print("cpfail")
 def playerin():
-    a = input("Rock, Paper or Scissors? ")
-    if a == "Rock":
-        print("You picked Rock")
-        return 1
-    elif a == "Paper" :
-        print("You picked Paper")
-        return 2
-    elif a == "Scissors":
-        print("You picked Scissors")
-        return 3
-    else :
-        print("invalid")
-        main()
+    x = 0
+    while x == 0:
+        a = input("Rock, Paper or Scissors? ")
+        if a == "Rock":
+            print("You picked Rock")
+            print("vs")
+            x = 1
+        elif a == "Paper" :
+            print("You picked Paper")
+            print("vs")
+            x = 2
+        elif a == "Scissors":
+            print("You picked Scissors")
+            print("vs")
+            x = 3
+        else : 
+            print("Invalid")
+    return x
 
 def main():
     y = playerin()
@@ -61,10 +66,10 @@ def wincon():
             print("again")
             print("Player Score: " , Pscore)
             print("Bot Score: ", Bscore)
-        if Bscore == 5 :
+        if Bscore >= 5 :
             print("Bot win")
             gameover = True
-        elif Pscore == 5 :
+        elif Pscore >= 5 :
             print("Player win")
             gameover = True
 
